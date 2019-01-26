@@ -1,0 +1,12 @@
+import cv2
+img = cv2.imread('./images/input.jpg', cv2.IMREAD_COLOR)
+grayImg = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+yuvImg = cv2.cvtColor(img, cv2.COLOR_RGB2YUV)
+y,u,v = cv2.split(yuvImg)
+cv2.imshow('Original', img)
+cv2.imshow('YUV', yuvImg)
+cv2.imshow('Grayscale', grayImg)
+cv2.imshow('Y Channel', y)
+cv2.imshow('U Channel', u)
+cv2.imshow('V Channel', v)
+cv2.waitKey()
